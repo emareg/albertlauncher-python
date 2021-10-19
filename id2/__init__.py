@@ -88,13 +88,13 @@ def initialize():
     global iconPath
     global id2data
 
-    # compute lengths
-    parseIdentifierLengthsOnce()
-
     # load ID regex entries
     id2Path = os.path.dirname(__file__)+"/id2data.json"
     with open(id2Path) as json_file:
         id2data = json.load(json_file)
+
+    # compute lengths
+    parseIdentifierLengthsOnce()
 
     if iconPath == "":
         iconPath=os.path.dirname(__file__)+"/web-browser.svg"
